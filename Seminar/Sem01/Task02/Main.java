@@ -1,3 +1,5 @@
+package Exceptions.Seminar.Sem01.Task02;
+
 public class Main {
     public static int getElemByIndexInArr(int[] array, int minLen, int value) {
         if (array == null) throw new NullPointerException("Массив не должен быть null!");
