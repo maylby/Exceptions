@@ -1,0 +1,14 @@
+Исключения в программировании и их обработка (семинары)
+Урок 1. Обработка ошибок в программировании
+https://gb.ru/lessons/420867
+
+Задание №5.2 и 5.3
+
+Дан стектрейс ошибки. Проанализируйте, предложите 
+возможное место и причину возникновения ошибки.
+
+2. стэктрейс по ссылке:
+https://docs.google.com/document/d/197XaW263uG8l88tDhW9cIz05tKfKouNBusKOV0K-uS8/edit
+
+3. Дан лог файл ST_example.log
+https://github.com/sabinaIsm/test/blob/d2ebf811b85139783b1a0dcbe3714dbb28deee82/ST_example.log
