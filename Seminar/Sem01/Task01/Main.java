@@ -6,6 +6,12 @@ https://gb.ru/lessons/420867
  */
 package Exceptions.Seminar.Sem01.Task01;
 
+/*
+ * Задание №0 
+ * Реализуйте метод, принимающий в качестве аргумента целочисленный массив. 
+ * Если длина массива меньше некоторого заданного минимума, 
+ * метод возвращает -1, в качестве кода ошибки, иначе - длину массива.
+ */
 public class Main {
     public static int getArrayLength(int[] array, int minLen) {
         if (array.length < minLen) return -1;
