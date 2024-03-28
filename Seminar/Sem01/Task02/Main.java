@@ -1,3 +1,9 @@
+/*
+Исключения в программировании и их обработка (семинары)
+Урок 1. Обработка ошибок в программировании
+https://gb.ru/lessons/420867
+
+ */
 package Exceptions.Seminar.Sem01.Task02;
 
 public class Main {
