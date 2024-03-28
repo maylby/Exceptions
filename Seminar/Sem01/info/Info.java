@@ -160,4 +160,32 @@ F12 (информация о коде ошибки)
 (студенты)
 
 см. папку 05_(С-01)_Доп
+
+Андрей Лапотько https://github.com/AndreiLapotko/ExcepsL01/tree/08cc34daaf67e63de433a01f52ba0ec728c586f8/Seminar01
+
+00:47:00- 00:58:20
+Task01
+
+
+00:58:30 - 01:15:00
+Task02
+
+
+01:17:00 - 01:30:00
++ Task03
+
+
+01:40:00 (?) 
+Task04
+
+
+01:44:45 
+Задание без кода
+Александр Леонидов 
+https://docs.google.com/document/d/197XaW263uG8l88tDhW9cIz05tKfKouNBusKOV0K-uS8/edit
+
+
+01:57:30
+Разбор ДЗ-01
+
  */
