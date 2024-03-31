@@ -13,6 +13,8 @@ package Exceptions.Seminar.Sem02.Lesson2;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Lesson2 {
 
@@ -118,3 +120,33 @@ class СheckedException {
     }
 }
 
+
+/*
+ * два "try-catch" одновременно,
+ * один для "FileReader",
+ * другой для "FileWriter"
+ */
+class СheckedException2 {
+    public static void main(String[] args) {
+        try {
+
+            FileReader fr = new FileReader("1.txt"); 
+            System.out.println("Файл прочитан"); 
+
+        } catch (FileNotFoundException exception) {
+            
+            try {
+                /*
+                 * FileWriter - для чтения вывода об обработке исключения
+                 * Если файла "error.txt" нет, "FileWriter" его создаст
+                 * "true" - для дозаписи очередной обработки, воизбежание перезаписывания
+                 */
+                FileWriter fw = new FileWriter("error.txt", true); 
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Вышли из try-catch");
+    }
+}
