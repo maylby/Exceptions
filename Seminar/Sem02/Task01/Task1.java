@@ -7,7 +7,7 @@ import java.util.Scanner;
 * Изучите данный код. Все ли с ним хорошо? Если нет,
 * скорректируйте код, попробуйте обосновать свое решение.
 */
-public class Task01 {
+public class Task1 {
     public static void main(String[] args) {
         run();
     }
