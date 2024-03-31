@@ -10,6 +10,12 @@ https://gb.ru/lessons/420868
 package Exceptions.Seminar.Sem02.Lesson2;
 
 public class Lesson2 {
+
+    /*
+     * NullPointerException
+     * Исключение, возникшее при обращении 
+     * к неинициализированному объекту (null)
+     */
     public static void main(String[] args) {
         String str = null;
         System.out.println(str.length());
