@@ -94,15 +94,27 @@ class СheckedException {
              * будет воспринята компилятором, как исключение, требующее обработки.
              * Следует обернуть данную строку в блок "try-catch"
              */
-            FileReader fr = new FileReader("1.txt");  
+            FileReader fr = new FileReader("1.txt"); 
+            System.out.println("Файл прочитан"); // вспомогательная строка
+                                                   // для пояснения того, что 
+                                                   // адрес файла указан верно
         /*
-         * Запись в catch "FileNotFoundException е" 
-         * подразумевает следующее:
-         * "FileNotFoundException е = new FileNotFoundException()", но
-         * так писать нельзя, код не скомпелируется
+         * Запись "FileNotFoundException е" подразумевает, что 
+         * компилятор создаёт в блоке catch
+         * экземпляр класса (FileNotFoundException):
+         * "FileNotFoundException е = new FileNotFoundException()".
+         * В Java так писать запрещено, код не скомпелируется, т.к.
+         * используют более краткую форму записи, но нужно понимать, что 
+         * под этой формой записи, на самом деле, скрыт созданный экземпляр класса.
          */
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (FileNotFoundException exception) {
+            exception.printStackTrace(); // по умолчанию, распечатать в консоль 
+                                         // StackTrace ошибки
+                                         // "exception" - это переменная, с которой 
+                                         // следует работать, как с обычной переменной
+                                         // обозначается как "e", "ex", "exp" и пр.
         }
+        System.out.println("Вышли из try-catch");
     }
 }
+
