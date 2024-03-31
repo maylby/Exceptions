@@ -82,7 +82,10 @@ class AncheckedException {
     }
 }
 
-
+/*
+ * "import java.io.FileNotFoundException" и "import java.io.FileReader"
+ * перенесены вверх, размещены над строкой "class Lesson2" 
+ */
 class СheckedException {
     public static void main(String[] args) {
         try {
