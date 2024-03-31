@@ -11,6 +11,9 @@ https://gb.ru/lessons/420868
 
 package Exceptions.Seminar.Sem02.Lesson2;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
 public class Lesson2 {
 
 }
@@ -78,3 +81,4 @@ class AncheckedException {
         int x = 2 / 0; // AritmeticException - непроверяемое исключение
     }
 }
+
