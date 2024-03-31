@@ -85,11 +85,12 @@ class AncheckedException {
     }
 }
 
-/*
+/**
+ * CheckedException
  * "import java.io.FileNotFoundException" и "import java.io.FileReader"
  * перенесены вверх, размещены над строкой "class Lesson2" 
  */
-class СheckedException {
+class CheckedException {
     public static void main(String[] args) {
         try {
             /*
@@ -122,7 +123,8 @@ class СheckedException {
 }
 
 
-/*
+/**
+ * СheckedException2
  * два "try-catch" одновременно,
  * один для "FileReader",
  * другой для "FileWriter"
