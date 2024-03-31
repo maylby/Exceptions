@@ -20,6 +20,11 @@ public class Task1 {
                 "в который хотите записать значение 1"
                 );
         int index = 0;
+        
+        /*
+         * Проверка ввода целого числа с помощью "if/else"
+         * менее ресурсоёмкий способ, чем "try-catch"
+         */        
         if (scanner.hasNextInt()) index = scanner.nextInt();
         else  {
             System.out.printf("Индекс должен быть целым числом");
@@ -31,9 +36,15 @@ public class Task1 {
             System.out.println("Изменено");
         } catch (IndexOutOfBoundsException e) {
             System.err.println("Указан индекс за пределами массива");
-        } catch(InputMismatchException e) {
+        }
+
+        /*
+         * Проверка ввода целого числа
+         * пресекает ввод букв и дробей
+         */
+        // catch(InputMismatchException e) {
         //     System.out.printf("Индекс должен быть целым числом" +
         //                     "\nВведите число от 0 до 9: ");
-        }
+        // }
     }
 }
