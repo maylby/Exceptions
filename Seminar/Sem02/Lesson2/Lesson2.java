@@ -128,42 +128,75 @@ class СheckedException {
  * другой для "FileWriter"
  */
 class СheckedException2 {
+
+    /*
+     * В блоке Maim данного кода
+     * реализован блок "finally",
+     * закрывающий работу тех или иных потоков,
+     * ради экономии ресурсов оперативной памяти.
+     * Что важно при написании кодов для приложений,
+     * рассчитанных на большое число пользователей,
+     * использующих систему одновременно.
+     */
     public static void main(String[] args) {
-        try {
-
-            FileReader fr = new FileReader("1.txt"); 
-            System.out.println("Файл прочитан"); 
-
-        } catch (FileNotFoundException exception) {
-            
+        while (true) {
+            FileReader fr = null; // "null" - замена инициализации, 
+                                  // которая произойдёт позже, в блоке "try-catch",
+            FileWriter fw = null; // переменные заданы перед блоком "try-catch", 
+                                  // чтобы они были видны из блока "finally",
+                                  // который закрывает (close) потоки, 
+                                  // запускаемые для работы FileReader и FileWriter
             try {
-                /*
-                 * FileWriter - для чтения вывода об обработке исключения
-                 * Если файла "error.txt" нет, "FileWriter" его создаст
-                 * "true" - для дозаписи очередной обработки, воизбежание перезаписывания
-                 * (данная конструкция понадобиться в аттестационной работе)
-                 */
-                FileWriter fw = new FileWriter("error.txt", true);
 
+                fr = new FileReader("1.txt");  // тип переменной "fr" указывать не нужно,
+                                                        // он указан выше, после "while"
+                System.out.println("Файл прочитан"); 
+            
+            // Исключение FileNotFoundException наследует IOException, поэтому, 
+            // в catch FileReader'а можно записать, только старший (IOException)
+            } catch (IOException exception) {
+                
+                try {
+                    /*
+                     * FileWriter - для чтения вывода об обработке исключения
+                     * Если файла "error.txt" нет, "FileWriter" его создаст
+                     * "true" - для дозаписи очередной обработки, воизбежание перезаписывания
+                     * (данная конструкция понадобиться в аттестационной работе)
+                     */
+                    fw = new FileWriter("error.txt", true); // тип переменной "fr" 
+                                                                            // указывать не нужно, 
+                                                                            // он указан выше
+                    /*
+                     * Запись в файл (error.txt):
+                     * время (LocalDateTime) ошибки и 
+                     * текст сообщения (getMessage) об ошибке.
+                     * Строка кода записана столбиком для удобства чтения
+                     * Знак "%n" - аналог знака переноса строки "\n", нужен для того, чтобы 
+                     * каждая новая запись в файле (error.txt) начиналась с новой строки. 
+                     */
+                    fw.write(
+                        String.format("%s %s%n", 
+                        LocalDateTime.now(), 
+                        exception.getMessage())
+                        );
+                        fw.flush(); // принудительная запись в файл
+    
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } finally {
                 /*
-                 * Запись в файл (error.txt):
-                 * время (LocalDateTime) ошибки и 
-                 * текст сообщения (getMessage) об ошибке.
-                 * Строка кода записана столбиком для удобства чтения
-                 * Знак "%n" - аналог знака переноса строки "\n", нужен для того, чтобы 
-                 * каждая новая запись в файле (error.txt) начиналась с новой строки. 
+                 * Создаём блок "try-catch"
+                 * для обработки исключений закрытия (close) потоков
                  */
-                fw.write(
-                    String.format("%s %s%n", 
-                    LocalDateTime.now(), 
-                    exception.getMessage())
-                    );
-                    fw.flush(); // принудительная запись в файл
-
-            } catch (IOException e) {
-                e.printStackTrace();
+                try {
+                    fr.close();
+                    fw.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
+            System.out.println("Вышли из try-catch");
         }
-        System.out.println("Вышли из try-catch");
     }
 }
