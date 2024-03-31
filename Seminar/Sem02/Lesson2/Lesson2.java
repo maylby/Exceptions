@@ -7,7 +7,7 @@ https://gb.ru/lessons/420868
 
 
 // 00:22:00 (?)
-// Добавить приведённый лектолром код
+// Добавить приведённый лектором код
 
 package Exceptions.Seminar.Sem02.Lesson2;
 
@@ -21,7 +21,7 @@ public class Lesson2 {
 
 }
 
-// 00:27:30
+// 00:27:30 (?)
 
 /**
  * NullPointer
@@ -81,7 +81,7 @@ RuntimeException, наследующий
  * AncheckedException (непроверенное исключение)
  * Пример непроверяемых исключений
  */
-class AncheckedException {
+class UncheckedException {
     public static void main(String[] args) {
         int x = 2 / 0; // AritmeticException - непроверяемое исключение
     }
