@@ -1,5 +1,6 @@
 package Exceptions.Seminar.Sem02.Task01;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -15,14 +16,24 @@ public class Task01 {
         Scanner scanner = new Scanner(System.in);
             int[] arr = new int[10];
             System.out.println(
-                "Укажите индекс элемента массива, " +
+                "Укажите индекс элемента массива, от 0 до 9 " +
                 "в который хотите записать значение 1"
                 );
+        int index = 0;
+        if (scanner.hasNextInt()) index = scanner.nextInt();
+        else  {
+            System.out.printf("Индекс должен быть целым числом");
+            return;
+        }
         try {
-            int index = scanner.nextInt();
+            // int index = scanner.nextInt();
             arr[index] = 1;
+            System.out.println("Изменено");
         } catch (IndexOutOfBoundsException e) {
             System.err.println("Указан индекс за пределами массива");
+        } catch(InputMismatchException e) {
+        //     System.out.printf("Индекс должен быть целым числом" +
+        //                     "\nВведите число от 0 до 9: ");
         }
     }
 }
