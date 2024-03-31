@@ -82,3 +82,20 @@ class AncheckedException {
     }
 }
 
+
+class СheckedException {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("1.txt"); // оборачиваем данную строку
+                                                              // в блок "try-catch"
+        /*
+         * Запись в catch "FileNotFoundException е" 
+         * подразумевает следующее:
+         * "FileNotFoundException е = new FileNotFoundException()", но
+         * так писать нельзя, код не скомпелируется
+         */
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}
