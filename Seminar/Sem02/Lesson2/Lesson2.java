@@ -15,6 +15,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 public class Lesson2 {
 
@@ -140,8 +141,24 @@ class СheckedException2 {
                  * FileWriter - для чтения вывода об обработке исключения
                  * Если файла "error.txt" нет, "FileWriter" его создаст
                  * "true" - для дозаписи очередной обработки, воизбежание перезаписывания
+                 * (данная конструкция понадобиться в аттестационной работе)
                  */
-                FileWriter fw = new FileWriter("error.txt", true); 
+                FileWriter fw = new FileWriter("error.txt", true);
+
+                /*
+                 * Запись в файл (error.txt):
+                 * время (LocalDateTime) ошибки и 
+                 * текст сообщения (getMessage) об ошибке.
+                 * Строка кода записана столбиком для удобства чтения
+                 * Знак "%n" - аналог знака переноса строки "\n", нужен для того, чтобы 
+                 * каждая новая запись в файле (error.txt) начиналась с новой строки. 
+                 */
+                fw.write(
+                    String.format("%s %s%n", 
+                    LocalDateTime.now(), 
+                    exception.getMessage())
+                    );
+                    fw.flush(); // принудительная запись в файл
 
             } catch (IOException e) {
                 e.printStackTrace();
