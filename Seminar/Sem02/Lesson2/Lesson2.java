@@ -86,8 +86,12 @@ class AncheckedException {
 class СheckedException {
     public static void main(String[] args) {
         try {
-            FileReader fr = new FileReader("1.txt"); // оборачиваем данную строку
-                                                              // в блок "try-catch"
+            /*
+             * Строка кода "FileReader", записанная прямо,
+             * будет воспринята компилятором, как исключение, требующее обработки.
+             * Следует обернуть данную строку в блок "try-catch"
+             */
+            FileReader fr = new FileReader("1.txt");  
         /*
          * Запись в catch "FileNotFoundException е" 
          * подразумевает следующее:
