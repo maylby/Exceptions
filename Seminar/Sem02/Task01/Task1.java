@@ -31,7 +31,8 @@ public class Task1 {
             return;
         }
         try {
-            // int index = scanner.nextInt();
+            // int index = scanner.nextInt(); // заменено на "int index = 0;"
+            //                                // вынесено выше, перед "if/else"
             arr[index] = 1;
             System.out.println("Изменено");
         } catch (IndexOutOfBoundsException e) {
