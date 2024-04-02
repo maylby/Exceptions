@@ -16,16 +16,20 @@ public class Task4 {
 
             inputStream = new FileInputStream("sdafgdsaf");
         }
-        catch (Throwable e) {
-            e.printStackTrace();
-        }
+
         /*
          * Ошибка компиляции:
          * "Недоступный блок catch для StackOverflowError. 
          * Это уже обрабатывается блоком catch для Throwable".
+         * Следует изменить порядок размещения в коде
+         * Поставить "StackOverflowError" перед "Throwable"
          */
         catch (StackOverflowError error) {
             System.err.println("stack overflow error");
+        }
+
+        catch (Throwable e) {
+            e.printStackTrace();
         }
 
         finally {
@@ -43,9 +47,16 @@ public class Task4 {
         test();
     }
 
+    /*
+     * Метод на проверку "Float"
+     * "float" — менее точный тип с плавающей точкой,
+     * аналог типа "double"
+     */
     private boolean isFloat(String str) {
         try {
-            Double.parseDouble(str);
+            Float.parseFloat(str);
+            return Float.NaN; // Несоответствие типов: невозможно преобразовать 
+                              // число с плавающей запятой в логическое значение.
             return true;
         } catch (NumberFormatException e) {
             return false;
