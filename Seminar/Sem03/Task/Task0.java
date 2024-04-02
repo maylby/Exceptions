@@ -47,6 +47,10 @@ class Task0Solution {
 		try (BufferedReader in = Files.newBufferedReader(pathRead);
 			BufferedWriter out = Files.newBufferedWriter(pathWrite);) {
 			out.write(in.readLine());
-		}
+		} catch (IOException e) {} // В данном случае, ловить (catch) исключение не нужно, т.к.
+								   // в методе (rwLine) указан проброс (throws) 
+								   // исключения IOException выше по стеку.
+								   // Одна из двух записей лишняя.
+								   // Удалить "catch", код будет компактнее.
 	}
 }
