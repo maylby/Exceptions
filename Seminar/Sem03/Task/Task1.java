@@ -17,7 +17,11 @@ import java.io.IOException;
 public class Task1 {
     public static void main(String[] args) {
         try {
-            doSomething();
+            doSomething();  // Обработка метода блоком try-catch обязательна, если
+                            // исключение не проброшено выше по стеку.
+                            // Система не потребует обработки или проброса, только
+                            // если метод будет источником Uncacked-исключения, 
+                            // RuntimeException или его наследников
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -29,8 +33,8 @@ public class Task1 {
      * в данном случае, IOException.
      */
     public static void doSomething() throws IOException{
-        throw new IOException(); // Можно ли удалить данную строку,
-                                 // если исключение проброшено (throws)?
-				                 // При удалении, система не выдаёт ошибку компиляции
+        throw new IOException(); // Метод doSomething может быть и пустым, но
+				                 // main всё равно потребует обрабртать исключение, т.к.
+                                 // doSomething его пробросил (throws).
     }
 }
