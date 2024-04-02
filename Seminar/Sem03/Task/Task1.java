@@ -23,7 +23,13 @@ public class Task1 {
         }
     }
 
+    /**
+     * Метод doSomething - это
+     * источник chacked-исключения,
+     * в данном случае, IOException
+     */
     public static void doSomething() throws IOException{
-        throw new IOException(); // для чего нужна эта запись?
+        throw new IOException(); // можно ли удалить данную строку,
+                                 // если исключение проброшено (throws)
     }
 }
