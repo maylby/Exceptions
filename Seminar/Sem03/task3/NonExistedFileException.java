@@ -6,6 +6,8 @@ https://gb.ru/lessons/420869
  */
 package Exceptions.Seminar.Sem03.task3;
 
+import java.io.FileNotFoundException;
+
 /**
  * Задание 3.2
  * Создайте класс исключения, которое 
@@ -13,6 +15,8 @@ package Exceptions.Seminar.Sem03.task3;
  * Исключение должно отображать понятное для пользователя 
  * сообщение об ошибке.
  */
-public class NonExistedFileException {
-    
+public class NonExistedFileException extends FileNotFoundException {
+    public NonExistedFileException() {
+        super("Файл не найден");
+    }
 }
