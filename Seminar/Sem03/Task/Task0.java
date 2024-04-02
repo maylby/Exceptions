@@ -1,4 +1,4 @@
-package Exceptions.Seminar.Sem03.Task00;
+package Exceptions.Seminar.Sem03.Task;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
