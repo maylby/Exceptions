@@ -1,6 +1,6 @@
 package Exceptions.HomeWork.Home03;
 
-// import java.util.Map;
+import java.util.Map;
 
 public class MyExceptions {
     
@@ -19,15 +19,25 @@ class ArrSizeExp extends IndexOutOfBoundsException{
 
 
 /*
- * Метод бросает ошибку несоответствия элемента
+ * несоответствие элемента
  * Класс наследует Unchaced-исключение (непроверяемое) 
  */
 class SexException extends IllegalArgumentException {
     public SexException(String m, String f) {
         super(String.format("Укажите пол (муж.: m / жен.: f)", m, f));
     }
+}
 
-    // public MyArrayDataException(Map<Point2d, String> cache) {
-    //     super(String.format("Не валлидные данные: %s%n", cache)); // "%n" - перенос строки
-    // }
+/*
+ * несоответствие элемента числу
+ * Класс наследует Unchaced-исключение (непроверяемое) 
+ */
+class ArgException extends IllegalArgumentException {
+    public ArgException(int x, int y) {
+        super(String.format("В ячейке [%s][%s] - не число", x, y));
+    }
+
+    public ArgException(Map<Integer, String> cache) {
+        super(String.format("Не валлидные данные: %s%n", cache)); // "%n" - перенос строки
+    }
 }
