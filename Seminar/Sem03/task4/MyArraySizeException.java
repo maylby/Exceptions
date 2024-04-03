@@ -12,6 +12,6 @@ package Exceptions.Seminar.Sem03.task4;
  */
 public class MyArraySizeException extends IndexOutOfBoundsException{
     public MyArraySizeException() {
-        super("Массив должен быть 3х3"); 
+        super("Массив должен быть 3х3 "); 
     }
 }

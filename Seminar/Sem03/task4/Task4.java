@@ -31,12 +31,12 @@ public class Task4 {
     static String[][] arr = new String[][] {
         {"1", "1.5", "1.5"},
         {"1", "1.5", "1.5"},
-        {"1", "ф", "1.5"}
+        {"1", " ф", "1.5"}
     };
     
     // метод "main", в котором вызываются исключения
     public static void main(String[] args) {
-        System.out.println(sum2d(arr)); // вызов метода (sum2d) с указанием массива (arr)
+        System.out.println(sum2dv2(arr)); // вызов метода (sum2dv2) с указанием массива (arr)
     }
     /*
      * метод "sum2d" вычислений и исключений
