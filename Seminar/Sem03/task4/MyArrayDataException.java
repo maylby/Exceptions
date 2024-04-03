@@ -6,6 +6,8 @@ https://gb.ru/lessons/420869
  */
 package Exceptions.Seminar.Sem03.task4;
 
-public class MyArrayDataException {
-    
+public class MyArrayDataException extends IndexOutOfBoundsException {
+    public MyArrayDataException() {
+        super("Массив должен быть 3х3");
+    }
 }
