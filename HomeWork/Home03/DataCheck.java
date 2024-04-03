@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
-
 public class DataCheck {
     
     static Scanner scanner = new Scanner(System.in);
@@ -24,15 +23,14 @@ public class DataCheck {
         System.out.println(Arrays.toString(arr));
         // [Фамилия, Имя, Отчество, дата_рождения, номер_телефона, пол]
         if (arr.length != 6) {
-            throw new IndexOutOfBoundsException("Введите данне полностью");
+            throw new ArrSizeExp();
         }
 
         // String dateBirth = arr[3];
 
         String gender = arr[5];
         if (!gender.equals("m") || !gender.equals("f")) {
-            // "throw new ..." своё (?) исключение, наследующее "IllegalArgumentException"
-            // Создать класс исключений "MyExceptions", поместить в него все нужные исключения
+            throw new SexException(gender, gender);
         }
 
         Person p = new Person("Иванов", "Иван", "Иванович", 
