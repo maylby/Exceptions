@@ -1,3 +1,18 @@
+/*
+Правильная проверка валидации даты java?
+https://ru.stackoverflow.com/questions/1166190/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0-%D0%B2%D0%B0%D0%BB%D0%B8%D0%B4%D0%B0%D1%86%D0%B8%D0%B8-%D0%B4%D0%B0%D1%82%D1%8B-java
+
+Есть edittext в него вводиться дата из datepicker в формате dd.MM.yyyy
+
+//считываю выбранный день месяц год
+int day = datePicker.getDayOfMonth();
+int mon = datePicker.getMonth();
+int year = datePicker.getYear();
+//в переменную записываю дату строкой
+String outdate = String.format("%02d", day) + "." + String.format("%02d", mon + 1) + "." + year;
+DateEnterText.setText(outdate); //передаю значение в поле
+
+*/
 package Exceptions.HomeWork.Home03.Date;
 
 import java.util.regex.Matcher;
