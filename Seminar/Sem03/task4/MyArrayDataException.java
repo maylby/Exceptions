@@ -6,7 +6,11 @@ https://gb.ru/lessons/420869
  */
 package Exceptions.Seminar.Sem03.task4;
 
-public class MyArrayDataException extends IndexOutOfBoundsException {
+/*
+ * Метод бросает ошибку несоответствия элемента числу
+ * Класс наследует Unchaced-исключение (непроверяемое) 
+ */
+public class MyArrayDataException extends IllegalArgumentException {
     public MyArrayDataException() {
         super("Массив должен быть 3х3");
     }
