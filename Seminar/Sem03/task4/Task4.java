@@ -8,6 +8,9 @@ https://gb.ru/lessons/420869
  */
 package Exceptions.Seminar.Sem03.task4;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
 Напишите метод, на вход которого подаётся двумерный строковый массив размером 3х3.
 При подаче массива другого размера необходимо бросить исключение MyArraySizeException.
@@ -28,7 +31,7 @@ public class Task4 {
     static String[][] arr = new String[][] {
         {"1", "1.5", "1.5"},
         {"1", "1.5", "1.5"},
-        {"1", "1.5", "1.5"}
+        {"1", "ф", "1.5"}
     };
     
     // метод "main", в котором вызываются исключения
@@ -59,6 +62,33 @@ public class Task4 {
                     throw new MyArrayDataException(i, j);
                 }  
             }
+        }
+        return res;
+    }
+
+    /*
+     * Метод "sum2dv2"
+     * (модификация метода "sum2d")
+     */
+    public static double sum2dv2(String[][] arr) {
+        Map <Point2d, String> cache = new HashMap<>();
+        double res = 0;
+
+        for (int i = 0; i< arr.length; i++) {
+            if (arr.length != arr[i].length) {
+                throw new MyArraySizeException();
+            }
+
+            for (int j = 0; j < arr[i].length; j++) {
+                try {
+                    res += Double.parseDouble(arr[i][j]); 
+                } catch (IllegalArgumentException e) {
+                    cache.put(new Point2d(i, j), arr[i][j]);
+                }  
+            }
+        }
+        if (!cache.isEmpty()) {
+            throw new MyArrayDataException(cache);
         }
         return res;
     }
