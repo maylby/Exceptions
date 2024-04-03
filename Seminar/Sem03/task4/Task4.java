@@ -3,6 +3,8 @@
 Урок 3. Продвинутая работа с исключениями в Java
 https://gb.ru/lessons/420869
 
+
+01:25:00
  */
 package Exceptions.Seminar.Sem03.task4;
 
@@ -18,9 +20,25 @@ package Exceptions.Seminar.Sem03.task4;
 в какой именно ячейке лежат неверные данные.
 
 2. В методе main() вызвать полученный метод, обработать возможные исключения
-MyArraySizeException и MyArrayDataException и вывести результат расчета
-(сумму элементов, при условии, что подали на вход корректный массив).
+MyArraySizeException и MyArrayDataException и вывести результат расчета, 
+сумму элементов, при условии, что подали на вход корректный массив.
 */
 public class Task4 {
+    // двумерный строковый массив (3х3)
+    static String[][] arr = new String[][] {
+        {"1", "1.5", "1.5"},
+        {"1", "1.5", "1.5"},
+        {"1", "1.5", "1.5"}
+    };
     
+    // метод main, в котором вызываются исключения
+    public static void main(String[] args) {
+    
+    }
+    
+    // метод sum2d для вычислений и исключений
+    public static double sum2d(String[][] arr) {
+        return 0;
+    }
 }
+    
