@@ -24,10 +24,10 @@ public class DataCheck {
         System.out.println(Arrays.toString(arr));
         // [Фамилия, Имя, Отчество, дата_рождения, номер_телефона, пол]
         if (arr.length != 6) {
-            // "throw new ..." своё (?) исключение, наследующее "IndexOutOfBoundsException"
+            throw new IndexOutOfBoundsException("Введите данне полностью");
         }
 
-        String dateBirth = arr[3];
+        // String dateBirth = arr[3];
 
         String gender = arr[5];
         if (!gender.equals("m") || !gender.equals("f")) {
@@ -40,9 +40,9 @@ public class DataCheck {
         System.out.println(p.toString());
 
         String fn = arr[0] + ".txt";
-        try (FileWriter fr = new FileWriter(fn, true);) {
-            fr.write(p.toString() + "\n");
-            fr.flush();
+        try (FileWriter fw = new FileWriter(fn, true);) {
+            fw.write(p.toString() + "\n");
+            fw.flush();
         } catch (IOException e) {
             e.printStackTrace();
         }
