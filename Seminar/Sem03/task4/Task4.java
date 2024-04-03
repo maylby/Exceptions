@@ -35,13 +35,20 @@ public class Task4 {
     public static void main(String[] args) {
         System.out.println(sum2d(arr)); // вызов метода (sum2d) с указанием массива (arr)
     }
-    
-    // метод "sum2d" для вычислений и исключений
+    /*
+     * метод "sum2d" вычислений и исключений
+     */
     public static double sum2d(String[][] arr) {
         double res = 0;
-        // "arr.length" - количество входящих массивов (число строк)
+        
+        /*
+         * "arr.length" - количество входящих массивов (число строк)
+         */
         for (int i = 0; i< arr.length; i++) {
-            // "arr[i].length" - количество элементов в массиве (число столбцов)
+
+            /*
+             * "arr[i].length" - количество элементов в массиве (число столбцов)
+             */
             for (int j = 0; j < arr[i].length; j++) {
                 res += Double.parseDouble(arr[i][j]); // преобразование (parse) строки (String) 
                                                       // в дробное число (Double)
