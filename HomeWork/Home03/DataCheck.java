@@ -26,7 +26,7 @@ public class DataCheck {
             throw new ArrSizeExp();
         }
 
-        // String dateBirth = arr[3];
+        String birthday = arr[3]; // дата рождения
 
         String gender = arr[5];
         if (!gender.equals("m") || !gender.equals("f")) {
