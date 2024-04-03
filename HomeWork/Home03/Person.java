@@ -11,17 +11,17 @@ package Exceptions.HomeWork.Home03;
 public class Person {
     String surname;
     String name;
-    String patronym;
+    String patronymic;
     String dateBirth;
     String phone;
     String gender;
 
-    public Person(String surname, String name,String patronym, 
+    public Person(String surname, String name,String patronymic, 
                 String dateBirth, String phone, String gender) {
 
         this.surname = surname; 
         this.name = name;
-        this.patronym = patronym;
+        this.patronymic = patronymic;
         this.dateBirth = dateBirth;
         this.phone = phone;
         this.gender = gender;
@@ -30,6 +30,6 @@ public class Person {
     @Override
     public String toString() {
         return String.format("<%s><%s><%s><%s><%s><%s>%n", 
-                            surname, name, patronym, dateBirth, phone, gender);
+                            surname, name, patronymic, dateBirth, phone, gender);
     }
 }
