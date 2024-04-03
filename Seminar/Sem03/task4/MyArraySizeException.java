@@ -11,7 +11,7 @@ package Exceptions.Seminar.Sem03.task4;
  * Наследует Unchaced-исключение (непроверяемое)
  */
 public class MyArraySizeException extends IndexOutOfBoundsException{
-    public MyArraySizeException(int x, int y) {
-        super(String.format("В ячейке [%s][%s] - не число", x, y)); 
+    public MyArraySizeException() {
+        super("Массив должен быть 3х3"); 
     }
 }

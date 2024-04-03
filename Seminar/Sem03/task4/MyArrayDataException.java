@@ -11,7 +11,7 @@ package Exceptions.Seminar.Sem03.task4;
  * Класс наследует Unchaced-исключение (непроверяемое) 
  */
 public class MyArrayDataException extends IllegalArgumentException {
-    public MyArrayDataException() {
-        super("Массив должен быть 3х3");
+    public MyArrayDataException(int x, int y) {
+        super(String.format("В ячейке [%s][%s] - не число", x, y));
     }
 }

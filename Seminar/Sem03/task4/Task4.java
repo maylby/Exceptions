@@ -40,18 +40,24 @@ public class Task4 {
      */
     public static double sum2d(String[][] arr) {
         double res = 0;
-        
+
         /*
          * "arr.length" - количество входящих массивов (число строк)
          */
         for (int i = 0; i< arr.length; i++) {
-
+            if (arr.length != arr[i].length) {
+                throw new MyArraySizeException();
+            }
             /*
              * "arr[i].length" - количество элементов в массиве (число столбцов)
              */
             for (int j = 0; j < arr[i].length; j++) {
-                res += Double.parseDouble(arr[i][j]); // преобразование (parse) строки (String) 
-                                                      // в дробное число (Double)
+                try {
+                    res += Double.parseDouble(arr[i][j]); // (?) преобразование (parse) строки
+                                                          // (String) в дробное число (Double)
+                } catch (IllegalArgumentException e) {
+                    throw new MyArrayDataException(i, j);
+                }  
             }
         }
         return res;
