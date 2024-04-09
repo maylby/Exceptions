@@ -27,7 +27,7 @@ public class DataCheck {
         }
 
         Snring phone = arr[4];
-        if (!phone.equals(int num)) {
+        if (!phone.equals(Integer.number)) {
             throw new NumberFormatException();
         }
 
@@ -39,7 +39,7 @@ public class DataCheck {
         }
 
         PersonInfo person = new PersonInfo("Иванов", "Иван", "Иванович", 
-                            "11.11.2001", "123456", "m");
+                                            "11.11.2001", "123456", "m");
         System.out.println(p.toString()); // "toString" можно не писать,
                                           // Java и так понимает, что в консоли
                                           // Нужно выводить "toString"

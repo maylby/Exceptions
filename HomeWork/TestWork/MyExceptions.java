@@ -17,9 +17,9 @@ public class MyExceptions {
  * Соответствие заданного колличества элементов массива
  * количеству элементов, введенных пользователем
  */
-class ArrSizeExp extends IndexOutOfBoundsException{
+class ArrSizeExep extends IndexOutOfBoundsException{
     public ArrSizeExep() {
-       super("Введите данные полностью ");
+        super("Введите данные полностью ");
     }
 }
 
@@ -38,7 +38,7 @@ class SexException extends IllegalArgumentException {
  * несоответствие элемента числу
  * Класс наследует Unchaced-исключение (непроверяемое) 
  */
-class ArgException extends IllegalArgumentException {
+class ArgException extends NumberFormatException {
     public ArgException(int x, int y) {
         super(String.format("В ячейке [%s][%s] - не число", x, y));
     }
