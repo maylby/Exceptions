@@ -14,7 +14,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DataCheck {
-    static Scanner scanner = new Scanner(System.in); // "ibm866"
+    static Scanner scanner = new Scanner(System.in); // "System.in" - читение данных из консоли
+                                                     // "ibm866" - кириллица
     public static void main(String[] args) {
         // Scanner scanner = new Scanner(System.in); // "ibm866"
         String data = scanner.nextLine();
@@ -25,20 +26,26 @@ public class DataCheck {
             throw new ArrSizeExep();
         }
 
+        Snring phone = arr[4];
+        if (!phone.equals(int num)) {
+            throw new NumberFormatException();
+        }
+
         String birthday = arr[3]; // дата рождения
 
         String gender = arr[5];
         if (!gender.equals("m") || !gender.equals("f")) {
             throw new SexException(gender, gender);
-        }
-
-        Person p = new Person("Иванов", "Иван", "Иванович", 
+        } else // ???
+        
+        PersonInfo person = new PersonInfo("Иванов", "Иван", "Иванович", 
                             "11.11.2001", "123456", "m");
-        System.out.println(p.toString());
-
-        String fn = arr[0] + ".txt";
-        try (FileWriter fw = new FileWriter(fn, true);) {
-            fw.write(p.toString() + "\n");
+        System.out.println(p.toString()); // "toString" можно не писать,
+                                          // Java и так понимает, что в консоли
+                                          // Нужно выводить "toString"
+        String fileName = arr[0] + ".txt";
+        try (FileWriter fw = new FileWriter(fileName, true);) {
+            fw.write(person.toString() + "\n");
             fw.flush();
         } catch (IOException e) {
             e.printStackTrace();

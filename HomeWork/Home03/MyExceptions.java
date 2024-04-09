@@ -13,7 +13,7 @@ public class MyExceptions {
  */
 class ArrSizeExp extends IndexOutOfBoundsException{
     public ArrSizeExep() {
-        super("Введите данные полностью "); 
+       super("Введите данные полностью ");
     }
 }
 
