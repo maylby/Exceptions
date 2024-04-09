@@ -12,7 +12,7 @@ public class MyExceptions {
  * количеству элементов, введенных пользователем
  */
 class ArrSizeExp extends IndexOutOfBoundsException{
-    public ArrSizeExp() {
+    public ArrSizeExep() {
         super("Введите данные полностью "); 
     }
 }

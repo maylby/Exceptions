@@ -14,16 +14,15 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DataCheck {
-    
-    static Scanner scanner = new Scanner(System.in);
-
+    static Scanner scanner = new Scanner(System.in); // "ibm866"
     public static void main(String[] args) {
+        // Scanner scanner = new Scanner(System.in); // "ibm866"
         String data = scanner.nextLine();
         String[] arr = data.split(" ");
         System.out.println(Arrays.toString(arr));
         // [Фамилия, Имя, Отчество, дата_рождения, номер_телефона, пол]
         if (arr.length != 6) {
-            throw new ArrSizeExp();
+            throw new ArrSizeExep();
         }
 
         String birthday = arr[3]; // дата рождения
