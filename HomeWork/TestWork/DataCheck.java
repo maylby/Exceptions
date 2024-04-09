@@ -36,19 +36,19 @@ public class DataCheck {
         String gender = arr[5];
         if (!gender.equals("m") || !gender.equals("f")) {
             throw new SexException(gender, gender);
-        
+        }
+
         PersonInfo person = new PersonInfo("Иванов", "Иван", "Иванович", 
                             "11.11.2001", "123456", "m");
         System.out.println(p.toString()); // "toString" можно не писать,
                                           // Java и так понимает, что в консоли
                                           // Нужно выводить "toString"
         String fileName = arr[0] + ".txt";
-            try (FileWriter fw = new FileWriter(fileName, true);) {
-                fw.write(person.toString() + "\n");
-                fw.flush();
-            } catch (IOException e) {
+        try (FileWriter fw = new FileWriter(fileName, true);) {
+            fw.write(person.toString() + "\n");
+            fw.flush();
+        } catch (IOException e) {
                 e.printStackTrace();
-            }
         }
     }
 }
